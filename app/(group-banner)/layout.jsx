@@ -1,9 +1,7 @@
-import Counter from './Counter'
-
 const PostLayout = ({ children }) => {
   return (
     <div>
-      <Counter />
+      <marquee style={{ background: 'white', color: 'black' }}>Next.js 13</marquee>
       {children}
     </div>
   )

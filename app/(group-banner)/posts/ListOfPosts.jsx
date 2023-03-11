@@ -2,13 +2,15 @@ import LikeButton from './LikeButton'
 import Link from 'next/link'
 
 const fetchPosts = () => {
+  // getStaticProps
   // return fetch('https://jsonplaceholder.typicode.com/posts') // Static fetch
+  // getserverSideProps
   // return fetch('https://jsonplaceholder.typicode.com/posts', { cache: 'no-store' }) // Server side fetching. Only server do the fetch
   return fetch('https://jsonplaceholder.typicode.com/posts', {
     next: {
       revalidate: 10
     }
-  }) // Incremetnal static generation. Every 10 seconds do a fetch to revalidate static files. This is a better option than static fetch
+  }) // Incremetnal static regeneration. Every 10 seconds do a fetch to revalidate static files. This is a better option than static fetch
     .then(res => res.json())
 }
 
